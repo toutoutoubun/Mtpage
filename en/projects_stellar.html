@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stellar — Humanities Research Environment</title>
+<meta name="description" content="Papers, notes, graphs in one app. Completely local, no AI.">
+<meta name="keywords" content="research,local-first,Markdown,citation">
+<meta name="author" content="Tami_tou">
+<meta property="og:title" content="Stellar">
+<meta property="og:description" content="Your thoughts are your own.">
+<meta property="og:image" content="/og-stellar.png">
+<meta property="og:url" content="https://shiosailearn.com/projects_stellar.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://shiosailearn.com/projects_stellar.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Noto+Sans+JP:wght@200;300;400;500;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F2EDE4;
+    --navy: #2D516E;
+    --mizu: #7AA5B8;
+    --ink: #1A1A1A;
+    --mustard: #D4A535;
+    --burnt: #C9532E;
+    --olive: #6B7F4A;
+    --coral: #E08775;
+    --grey: #666;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0; background:var(--cream); font-family:Inter,'Noto Sans JP',sans-serif; color:var(--ink); }
+  a { text-decoration:none; color:inherit; }
+
+  /* ============= HEADER ============= */
+  .header {
+    padding:24px 50px;
+    display:flex; align-items:center; justify-content:space-between;
+    background:var(--cream);
+    position:relative; z-index:5;
+  }
+  .logo-lockup { display:flex; align-items:center; gap:14px; }
+  .logo-lockup .wordmark { color:var(--navy); font-family:Inter; font-weight:400; letter-spacing:0.18em; font-size:18px; }
+  .header-meta { display:flex; align-items:center; gap:24px; }
+  .header-coords { font-family:'JetBrains Mono', monospace; font-size:10px; color:var(--grey); letter-spacing:0.05em; }
+  .nav { display:flex; gap:8px; }
+  .nav a { color:var(--navy); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; font-weight:600; padding:8px 18px; border:1.5px solid transparent; border-radius:999px; }
+  .nav a.current { border-color:var(--navy); }
+  .nav a:hover { border-color:var(--navy); }
+
+  /* ============= HERO ============= */
+  .hero {
+    padding:80px 60px 100px;
+    background:var(--cream);
+    position:relative;
+    overflow:hidden;
+  }
+  .h-tag {
+    display:inline-flex; align-items:center; gap:10px;
+    padding:8px 16px;
+    background:var(--mizu);
+    color:var(--ink);
+    font-size:11px; letter-spacing:0.2em; text-transform:uppercase; font-weight:700;
+    border-radius:999px;
+  }
+  .h-tag::before { content:''; width:8px; height:8px; border-radius:50%; background:var(--burnt); }
+  .h-headline {
+    font-family:Inter,'Noto Sans JP'; font-weight:400;
+    font-size:80px; line-height:1.15;
+    margin:30px 0 30px 0;
+    letter-spacing:-0.02em;
+    max-width:900px;
+    color:var(--navy);
+  }
+  .h-headline em { font-style:normal; color:var(--mizu); font-weight:500; }
+  .h-body {
+    font-size:15px; line-height:1.85; color:var(--ink); max-width:560px;
+    word-break:auto-phrase; line-break:strict; overflow-wrap:break-word;
+  }
+  .h-body p { margin:0 0 14px 0; }
+
+  /* ============= FEATURES ============= */
+  .features-section {
+    padding:120px 60px;
+    background:var(--mizu);
+    color:var(--ink);
+    position:relative; overflow:hidden;
+  }
+  .features-tag {
+    display:inline-flex; align-items:center; gap:8px;
+    padding:8px 16px;
+    background:var(--navy);
+    color:var(--cream);
+    font-size:11px; letter-spacing:0.2em; text-transform:uppercase; font-weight:700;
+    border-radius:999px;
+  }
+  .features-tag::before { content:''; width:8px; height:8px; border-radius:50%; background:var(--mustard); }
+  .features-heading {
+    font-family:Inter,'Noto Sans JP'; font-weight:400;
+    font-size:64px; line-height:1.15;
+    margin:30px 0 60px 0;
+    letter-spacing:-0.02em;
+    color:var(--ink);
+  }
+  .features-grid {
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:60px;
+  }
+  .feature-item .title {
+    font-size:18px; font-weight:500; margin-bottom:12px;
+    color:var(--navy);
+  }
+  .feature-item .desc {
+    font-size:13px; line-height:1.75;
+    color:var(--ink); opacity:0.85;
+    word-break:auto-phrase; line-break:strict; overflow-wrap:break-word;
+  }
+
+  /* ============= SPECS ============= */
+  .specs-section {
+    padding:120px 60px;
+    background:var(--cream);
+    position:relative;
+  }
+  .specs-tag-row {
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom:60px;
+    border-bottom:1px dashed var(--navy);
+    padding-bottom:30px;
+  }
+  .specs-tag { font-size:13px; letter-spacing:0.2em; text-transform:uppercase; color:var(--navy); font-weight:700; display:flex; align-items:center; gap:12px; }
+  .specs-tag .dot { display:inline-block; width:14px; height:14px; border-radius:50%; background:var(--burnt); }
+  .specs-list {
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:50px;
+  }
+  .spec-item .label {
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px; letter-spacing:0.15em; text-transform:uppercase;
+    color:var(--grey); margin-bottom:8px;
+  }
+  .spec-item .value {
+    font-size:17px; line-height:1.6;
+    color:var(--ink);
+    word-break:auto-phrase; line-break:strict; overflow-wrap:break-word;
+  }
+
+  /* ============= CTA ============= */
+  .cta-section {
+    padding:120px 60px;
+    background:var(--olive);
+    color:var(--cream);
+    text-align:center;
+    position:relative; overflow:hidden;
+  }
+  .cta-section .cta-heading {
+    font-family:Inter,'Noto Sans JP'; font-weight:400;
+    font-size:56px; line-height:1.2;
+    margin:0 0 30px 0;
+    letter-spacing:-0.02em;
+  }
+  .cta-section .cta-desc {
+    font-size:17px; line-height:1.8;
+    margin:0 auto 50px auto;
+    max-width:620px;
+    opacity:0.95;
+    word-break:auto-phrase; line-break:strict; overflow-wrap:break-word;
+  }
+  .cta-button {
+    display:inline-flex; align-items:center; gap:10px;
+    padding:18px 40px;
+    background:var(--mustard); color:var(--ink);
+    font-size:13px; letter-spacing:0.15em; text-transform:uppercase; font-weight:700;
+    border-radius:999px;
+    cursor:pointer;
+  }
+
+  /* ============= FOOTER ============= */
+  .footer {
+    padding:80px 60px 40px;
+    background:var(--navy); color:var(--cream);
+    position:relative;
+  }
+  .footer .f-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:60px; padding-bottom:60px; }
+  .footer .f-logo svg { display:block; margin-bottom:20px; }
+  .footer .f-logo .wm { font-family:Inter; font-weight:500; font-size:18px; letter-spacing:0.18em; color:var(--cream); }
+  .footer .f-tagline { font-size:12px; line-height:1.7; max-width:280px; opacity:0.7; margin-top:20px; }
+  .footer .f-col h4 { font-size:10px; letter-spacing:0.25em; text-transform:uppercase; font-weight:700; margin:0 0 18px 0; color:var(--mustard); }
+  .footer .f-col a { font-size:12px; line-height:2; opacity:0.85; display:block; }
+  .footer .f-divider { height:1px; background:var(--cream); opacity:0.15; margin:30px 0 24px 0; }
+  .footer .f-bottom { display:flex; justify-content:space-between; align-items:flex-end; font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:0.05em; opacity:0.6; }
+
+  /* ============= RESPONSIVE ============= */
+  @media (max-width: 1024px) {
+    .hero { padding:40px 30px 60px; }
+    .features-section { padding:80px 30px; }
+    .features-grid { grid-template-columns:repeat(2, 1fr); gap:40px; }
+    .specs-section { padding:80px 30px; }
+    .specs-list { grid-template-columns:1fr; gap:40px; }
+    .cta-section { padding:80px 30px; }
+    .footer .f-grid { grid-template-columns:1fr; gap:30px; }
+  }
+  @media (max-width: 768px) {
+    .header { padding:16px 24px; flex-wrap:wrap; }
+    .header-meta { flex-direction:column; align-items:flex-start; gap:12px; }
+    .nav { flex-wrap:wrap; }
+    .h-headline { font-size:48px; }
+    .features-heading { font-size:48px; }
+    .features-grid { grid-template-columns:1fr; gap:30px; }
+    .cta-section .cta-heading { font-size:40px; }
+    .footer { padding:50px 24px; }
+  }
+  @media (max-width: 480px) {
+    .header { flex-direction:column; align-items:flex-start; }
+    .header-coords { display:none; }
+    .h-headline { font-size:32px; }
+    .features-section { padding:60px 20px; }
+    .features-heading { font-size:36px; }
+    .features-grid { gap:20px; }
+    .feature-item .title { font-size:16px; }
+    .specs-section { padding:60px 20px; }
+    .cta-section { padding:60px 20px; }
+    .cta-section .cta-heading { font-size:28px; }
+    .cta-button { font-size:11px; padding:14px 28px; }
+    .footer { padding:40px 16px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============= HEADER ============= -->
+  <div class="header">
+    <a class="logo-lockup" href="/en/">
+      <svg viewBox="0 0 100 80" width="36" height="29">
+        <g fill="none" stroke="#2D516E" stroke-width="4" stroke-linecap="round">
+          <path d="M 25 25 Q 40 17, 55 25 T 75 25"/>
+          <path d="M 18 40 Q 36 32, 53 40 T 82 40"/>
+          <path d="M 10 55 Q 30 47, 50 55 T 80 55 T 90 55"/>
+        </g>
+      </svg>
+      <div class="wordmark">SHIOSAILEARN</div>
+    </a>
+    <div class="header-meta">
+      <div class="header-coords">N 35°41' · E 139°41'</div>
+      <nav class="nav">
+        <a href="/en/projects_c2_full.html">Projects</a>
+        <a href="/en/about.html">About</a>
+        <a href="/en/support.html">Support</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ============= HERO ============= -->
+  <section class="hero">
+    <div class="h-tag">PROJECT / STELLAR</div>
+    <h1 class="h-headline">Your thoughts are<br><em>your own.</em></h1>
+    <div class="h-body">
+      <p>Papers, notes, and analysis tools in one app.</p>
+      <p>Local-first with proper cloud backup. No AI, no subscription.</p>
+    </div>
+  </section>
+
+  <!-- ============= FEATURES ============= -->
+  <section class="features-section">
+    <div class="features-tag">CORE FEATURES</div>
+    <h2 class="features-heading">Five Tools</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="title">Library</div>
+        <div class="desc">Organize papers and books. Tags, categories, search.</div>
+      </div>
+      <div class="feature-item">
+        <div class="title">Editor</div>
+        <div class="desc">Markdown + WikiLink. Capture thoughts quickly.</div>
+      </div>
+      <div class="feature-item">
+        <div class="title">Citation Network</div>
+        <div class="desc">Visualize citation relationships. Grasp research connections.</div>
+      </div>
+      <div class="feature-item">
+        <div class="title">Qualitative Analysis</div>
+        <div class="desc">Text data analysis. Qualitative coding.</div>
+      </div>
+      <div class="feature-item">
+        <div class="title">Export</div>
+        <div class="desc">Output as PDF, Word, HTML. Open anywhere.</div>
+      </div>
+      <div class="feature-item">
+        <div class="title">Local First</div>
+        <div class="desc">Local-first. With cloud backup.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= SPECS ============= -->
+  <section class="specs-section">
+    <div class="specs-tag-row">
+      <div class="specs-tag"><span class="dot"></span>Specs</div>
+    </div>
+    <div class="specs-list">
+      <div class="spec-item">
+        <div class="label">— Status</div>
+        <div class="value">v1.0 Released（GitHub Open Source）</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">— Platform</div>
+        <div class="value">macOS / Windows / Linux</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">— Pricing</div>
+        <div class="value">Free (MIT License)</div>
+      </div>
+      <div class="spec-item">
+        <div class="label">— Tech Stack</div>
+        <div class="value">React 19 + Tauri 2.0 + Rust + SQLite</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============= CTA ============= -->
+  <section class="cta-section">
+    <h2 class="cta-heading">Download</h2>
+    <p class="cta-desc">Download Stellar. Own your research environment today.</p>
+    <a class="cta-button" href="https://github.com/toutoutoubun/stellar/releases">Download →</a>
+  </section>
+
+  <!-- ============= FOOTER ============= -->
+  <footer class="footer">
+    <div class="f-grid">
+      <div class="f-logo">
+        <svg viewBox="0 0 100 80" width="40" height="32">
+          <g fill="none" stroke="#D4A535" stroke-width="4" stroke-linecap="round">
+            <path d="M 25 25 Q 40 17, 55 25 T 75 25"/>
+            <path d="M 18 40 Q 36 32, 53 40 T 82 40"/>
+            <path d="M 10 55 Q 30 47, 50 55 T 80 55 T 90 55"/>
+          </g>
+        </svg>
+        <div class="wm">SHIOSAILEARN</div>
+        <p class="f-tagline">Quiet tools for autonomous individuals.</p>
+      </div>
+      <div class="f-col">
+        <h4>Projects</h4>
+        <a href="/en/projects_c2_full.html">All Projects</a>
+        <a href="/en/projects_konin.html">Konin-Pass</a>
+      </div>
+      <div class="f-col">
+        <h4>About</h4>
+        <a href="/en/about.html">Manifesto</a>
+        <a href="/en/about.html">Author</a>
+      </div>
+      <div class="f-col">
+        <h4>Connect</h4>
+        <a href="https://github.com/toutoutoubun/stellar">GitHub</a>
+        <a href="/en/support.html">Support</a>
+      </div>
+    </div>
+    <div class="f-divider"></div>
+    <div class="f-bottom">
+      <div>© 2026 SHIOSAILEARN — BY TAMI_TOU</div>
+      <div>END_OF_TRANSMISSION_2026.05.08</div>
+    </div>
+  </footer>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

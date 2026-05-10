@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShiosaiLearn Projects</title>
+<meta name="description" content="Konin-Pass en Stellar. Twee onafhanklike gereedskap.">
+<meta name="keywords" content="ekwivalensie,navorsing,plaaslik-eerste">
+<meta name="author" content="Tami_tou">
+<meta property="og:title" content="ShiosaiLearn Projects">
+<meta property="og:image" content="/og-projects.png">
+<meta property="og:url" content="https://shiosailearn.com/projects.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://shiosailearn.com/projects.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Noto+Sans+JP:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F2EDE4;
+    --navy: #2D516E;
+    --mizu: #7AA5B8;
+    --ink: #1A1A1A;
+    --mustard: #D4A535;
+    --burnt: #C9532E;
+    --olive: #6B7F4A;
+    --coral: #E08775;
+    --grey: #666;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0; background:var(--cream); font-family:Inter,'Noto Sans JP',sans-serif; color:var(--ink); }
+  a { text-decoration:none; color:inherit; }
+
+  .section-tag { padding:60px 50px 20px; font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--navy); font-weight:600; }
+
+  .grid {
+    display:grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap:0;
+  }
+  .card {
+    padding:80px 60px;
+    min-height:520px;
+    display:flex; flex-direction:column;
+    position:relative;
+  }
+  .card-1 { background:var(--navy); color:var(--cream); }
+  .card-2 { background:var(--mizu); color:var(--ink); }
+
+  .num {
+    font-family:Inter; font-weight:200; font-size:140px; line-height:1;
+    letter-spacing:-0.04em; opacity:0.5;
+  }
+  .name {
+    font-family:Inter; font-weight:300; font-size:46px;
+    letter-spacing:-0.01em; margin:24px 0 8px 0;
+  }
+  .name-jp {
+    font-size:13px; opacity:0.8;
+    letter-spacing:0.1em; margin-bottom:30px;
+  }
+  .desc {
+    font-size:15px; line-height:1.8;
+    margin-bottom:auto; max-width:440px;
+  }
+  .button {
+    display:inline-block; margin-top:36px; padding:14px 26px;
+    border:1px solid currentColor; font-size:11px;
+    letter-spacing:0.2em; text-transform:uppercase; color:inherit;
+    text-decoration:none; align-self:flex-start;
+    cursor:pointer;
+  }
+  .deco {
+    position:absolute; bottom:30px; right:30px;
+    width:140px; height:140px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .grid { grid-template-columns:1fr; }
+    .card { min-height:auto; padding:60px 40px; }
+  }
+  @media (max-width: 768px) {
+    .section-tag { padding:40px 24px; font-size:10px; }
+    .card { padding:50px 30px; }
+    .num { font-size:100px; }
+    .name { font-size:36px; }
+    .desc { font-size:14px; }
+  }
+  @media (max-width: 480px) {
+    .section-tag { padding:30px 16px; }
+    .card { padding:40px 20px; }
+    .num { font-size:80px; margin-bottom:-10px; }
+    .name { font-size:28px; }
+    .name-jp { font-size:11px; }
+    .desc { font-size:13px; }
+    .button { font-size:10px; padding:12px 20px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div style="padding:24px 50px; display:flex; align-items:center; justify-content:space-between; background:#F2EDE4; z-index:5;">
+    <a style="display:flex; align-items:center; gap:14px; text-decoration:none; color:#2D516E;" href="/af/">
+      <svg viewBox="0 0 100 80" width="36" height="29">
+        <g fill="none" stroke="#2D516E" stroke-width="4" stroke-linecap="round">
+          <path d="M 25 25 Q 40 17, 55 25 T 75 25"/>
+          <path d="M 18 40 Q 36 32, 53 40 T 82 40"/>
+          <path d="M 10 55 Q 30 47, 50 55 T 80 55 T 90 55"/>
+        </g>
+      </svg>
+      <div style="color:#2D516E; font-family:Inter; font-weight:400; letter-spacing:0.18em; font-size:18px;">SHIOSAILEARN</div>
+    </a>
+    <div style="display:flex; align-items:center; gap:24px;">
+      <div style="font-family:JetBrains Mono; font-size:10px; color:#666; letter-spacing:0.05em;">N 35°41' · E 139°41'</div>
+      <nav style="display:flex; gap:8px;">
+        <a href="/af/projects_c2_full.html" style="color:#2D516E; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; font-weight:600; padding:8px 18px; border:1.5px solid #2D516E; border-radius:999px; text-decoration:none;">Projects</a>
+        <a href="/af/about.html" style="color:#2D516E; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; font-weight:600; padding:8px 18px; border:1.5px solid transparent; border-radius:999px; text-decoration:none;">About</a>
+        <a href="/af/support.html" style="color:#2D516E; font-size:11px; letter-spacing:0.15em; text-transform:uppercase; font-weight:600; padding:8px 18px; border:1.5px solid transparent; border-radius:999px; text-decoration:none;">Support</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="section-tag">— Projects / Twee gereedskap</div>
+
+  <div class="grid">
+    <div class="card card-1">
+      <div class="num">01</div>
+      <div class="name">Konin-Pass</div>
+      <div class="name-jp">Konin-Pass</div>
+      <div class="desc">Bied vorige eksamenvrae aan sonder kompetisie of evaluering. Jou oordeel is joune.</div>
+      <a class="button" href="/af/projects_konin.html">View Details →</a>
+      <svg class="deco" viewBox="0 0 140 140">
+        <circle cx="70" cy="70" r="50" fill="none" stroke="#7AA5B8" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="card card-2">
+      <div class="num">02</div>
+      <div class="name">Stellar</div>
+      <div class="name-jp">Navorsingsomgewing</div>
+      <div class="desc">Een app vir artikels, notas, grafieke en analise. Heeltemal plaaslik, geen KI. Jou gedagtes is joune.</div>
+      <a class="button" href="/af/projects_stellar.html">View Details →</a>
+      <svg class="deco" viewBox="0 0 140 140">
+        <g fill="none" stroke="#2D516E" stroke-width="3.5" stroke-linecap="round">
+          <path d="M 36 56 Q 56 44, 78 56 T 110 56"/>
+          <path d="M 28 78 Q 56 64, 84 78 T 116 78"/>
+          <path d="M 36 100 Q 56 88, 78 100 T 110 100"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="padding:80px 60px 40px; background:#2D516E; color:#F2EDE4; position:relative;">
+    <div style="display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:60px; padding-bottom:60px;">
+      <div>
+        <svg viewBox="0 0 100 80" width="40" height="32">
+          <g fill="none" stroke="#D4A535" stroke-width="4" stroke-linecap="round">
+            <path d="M 25 25 Q 40 17, 55 25 T 75 25"/>
+            <path d="M 18 40 Q 36 32, 53 40 T 82 40"/>
+            <path d="M 10 55 Q 30 47, 50 55 T 80 55 T 90 55"/>
+          </g>
+        </svg>
+        <div style="font-family:Inter; font-weight:500; font-size:18px; letter-spacing:0.18em; color:#F2EDE4; margin-top:8px;">SHIOSAILEARN</div>
+        <p style="font-size:12px; line-height:1.7; max-width:280px; opacity:0.7; margin-top:20px;">Stil gereedskap vir outonome individue.</p>
+      </div>
+      <div>
+        <h4 style="font-size:10px; letter-spacing:0.25em; text-transform:uppercase; font-weight:700; margin:0 0 18px 0; color:#D4A535;">Projects</h4>
+        <a href="/af/projects_konin.html" style="font-size:12px; line-height:2; opacity:0.85; display:block; color:#F2EDE4; text-decoration:none;">Konin-Pass</a>
+        <a href="/af/projects_stellar.html" style="font-size:12px; line-height:2; opacity:0.85; display:block; color:#F2EDE4; text-decoration:none;">Stellar</a>
+      </div>
+      <div>
+        <h4 style="font-size:10px; letter-spacing:0.25em; text-transform:uppercase; font-weight:700; margin:0 0 18px 0; color:#D4A535;">About</h4>
+        <a href="/af/about.html" style="font-size:12px; line-height:2; opacity:0.85; display:block; color:#F2EDE4; text-decoration:none;">Manifesto</a>
+        <a href="/af/about.html" style="font-size:12px; line-height:2; opacity:0.85; display:block; color:#F2EDE4; text-decoration:none;">Author</a>
+        <a href="https://github.com/toutoutoubun" style="font-size:12px; line-height:2; opacity:0.85; display:block; color:#F2EDE4; text-decoration:none;">GitHub</a>
+      </div>
+      <div>
+        <h4 style="font-size:10px; letter-spacing:0.25em; text-transform:uppercase; font-weight:700; margin:0 0 18px 0; color:#D4A535;">Connect</h4>
+        <a href="https://github.com/shiosailearn" style="font-size:12px; line-height:2; opacity:0.85; display:block; color:#F2EDE4; text-decoration:none;">Repo</a>
+        <a href="/cdn-cgi/l/email-protection#92faf7fefefdd2e1fafbfde1f3fbfef7f3e0fcbcf1fdff" style="font-size:12px; line-height:2; opacity:0.85; display:block; color:#F2EDE4; text-decoration:none;">Email</a>
+        <a href="/af/support.html" style="font-size:12px; line-height:2; opacity:0.85; display:block; color:#F2EDE4; text-decoration:none;">Support</a>
+      </div>
+    </div>
+    <div style="height:1px; background:#F2EDE4; opacity:0.15; margin:30px 0 24px 0;"></div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; font-family:JetBrains Mono; font-size:10px; letter-spacing:0.05em; opacity:0.6;">
+      <div>© 2026 SHIOSAILEARN — BY TAMI_TOU</div>
+      <div>END_OF_TRANSMISSION_2026.05.08</div>
+    </div>
+  </footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
